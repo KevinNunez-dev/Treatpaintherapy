@@ -1,0 +1,19 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-ink: #071113;
+  --color-mint: #a8f2d6;
+  --color-turquoise: #0fb4c6;
+  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+}
+
+:root { color-scheme: dark; scroll-behavior: smooth; }
+body { margin: 0; background: #071113; color: #fff; font-family: var(--font-sans); -webkit-font-smoothing: antialiased; }
+::selection { background: #a8f2d6; color: #071113; }
+a, button { -webkit-tap-highlight-color: transparent; }
+a:focus-visible, button:focus-visible { outline: 2px solid #a8f2d6; outline-offset: 4px; }
+.glass { background: rgba(8, 20, 22, .64); border: 1px solid rgba(255,255,255,.17); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); }
+.gridline { background-image: linear-gradient(rgba(168,242,214,.055) 1px, transparent 1px), linear-gradient(90deg, rgba(168,242,214,.055) 1px, transparent 1px); background-size: 52px 52px; }
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity .75s ease, transform .75s ease; }
+.reveal.is-visible { opacity: 1; transform: translateY(0); }
+@media (prefers-reduced-motion: reduce) { :root { scroll-behavior: auto; } *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; } .reveal { opacity: 1; transform: none; } }
