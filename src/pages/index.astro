@@ -16,6 +16,14 @@ const conditions = [
   { name: 'Knee pain', detail: 'Understand how hip and quad imbalances can affect the knee.', href: 'https://rptclinic.com/knee-pain/', number: '05' },
   { name: 'Shoulder pain', detail: 'Explore care for tightness, imbalance, and limited shoulder movement.', href: 'https://rptclinic.com/shoulder-pain/', number: '06' },
 ];
+const tickerConditions = [
+  'Sciatica', 'Back pain', 'Neck pain', 'Knee pain', 'Shoulder pain', 'Herniated disc',
+  'Bulging disc', 'Hip pain', 'Carpal tunnel', 'Plantar fasciitis', 'Piriformis pain',
+  'Migraines', 'TMJ pain', 'Scoliosis', 'Spinal stenosis', 'Fibromyalgia', 'Bunions',
+  'Shin splints', 'Sports injuries', 'Sports performance', "Golfer's elbow", "Tennis elbow",
+  "Runner's knee", 'Ankle pain', 'Poor posture', 'Improved mobility', 'Golf swing',
+  'Foot pain', 'Muscle tension', 'Chronic pain', 'Movement limitations', 'Joint stress',
+];
 const testimonials = [
   { quote: 'Ben and his staff were able to give me substantial relief after I had tried pills, epidurals, acupuncture, meditation, yoga and more.', name: 'Robert S.', detail: 'Verified Google review' },
   { quote: 'Many thanks to Ben and team for the immediate pain relief. They care about their patients!', name: 'Caden C.', detail: 'Verified Google review' },
@@ -52,7 +60,14 @@ const mediaVideos = [
   </head>
   <body class="overflow-x-hidden">
     <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:bg-mint focus:px-4 focus:py-2 focus:text-ink">Skip to content</a>
-    <header class="glass absolute inset-x-0 top-0 z-30">
+    <div class="ticker absolute inset-x-0 top-0 z-40" aria-label="Conditions RPT Clinic treats in Michigan">
+      <div class="ticker__viewport">
+        <div class="ticker__track">
+          {[...tickerConditions, ...tickerConditions].map((condition) => <span class="ticker__item"><span class="ticker__pulse" aria-hidden="true"></span>{condition}</span>)}
+        </div>
+      </div>
+    </div>
+    <header class="glass absolute inset-x-0 top-9 z-30">
       <nav aria-label="Main navigation" class="mx-auto flex max-w-[1800px] items-center justify-between gap-5 px-6 py-5 lg:px-12">
         <a href="#top" aria-label="Treat Pain Therapy home" class="text-lg font-extrabold tracking-[-.06em] sm:text-xl">TREAT<span class="text-mint">/</span>PAIN <span class="font-medium text-mint">THERAPY</span></a>
         <div class="hidden items-center gap-8 text-sm font-medium text-white/75 md:flex"><a class="hover:text-mint" href="#approach">The approach</a><a class="hover:text-mint" href="#conditions">Pain topics</a><a class="hover:text-mint" href="#location">Location</a></div>

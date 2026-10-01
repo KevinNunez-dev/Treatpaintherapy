@@ -10,6 +10,13 @@
 :root { color-scheme: dark; scroll-behavior: smooth; }
 body { margin: 0; background: #071113; color: #fff; font-family: var(--font-sans); -webkit-font-smoothing: antialiased; }
 body { padding-bottom: 4.75rem; }
+.ticker { height: 2.25rem; overflow: hidden; border-bottom: 1px solid rgba(168,242,214,.18); background: rgba(7,17,19,.92); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); }
+.ticker__viewport { width: 100%; overflow: hidden; }
+.ticker__track { display: flex; width: max-content; animation: ticker-scroll 75s linear infinite; will-change: transform; }
+.ticker:hover .ticker__track, .ticker:focus-within .ticker__track { animation-play-state: paused; }
+.ticker__item { display: inline-flex; align-items: center; gap: .55rem; height: 2.25rem; padding: 0 1rem; color: rgba(255,255,255,.82); font-size: .64rem; font-weight: 700; letter-spacing: .12em; line-height: 1; text-transform: uppercase; white-space: nowrap; }
+.ticker__pulse { width: .36rem; height: .36rem; border-radius: 999px; background: #a8f2d6; box-shadow: 0 0 10px rgba(168,242,214,.85); }
+@keyframes ticker-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 ::selection { background: #a8f2d6; color: #071113; }
 a, button { -webkit-tap-highlight-color: transparent; }
 a:focus-visible, button:focus-visible { outline: 2px solid #a8f2d6; outline-offset: 4px; }
@@ -43,4 +50,4 @@ a:focus-visible, button:focus-visible { outline: 2px solid #a8f2d6; outline-offs
   .section-rail__inner { gap: 1rem; padding-right: 1rem; padding-left: 1rem; }
   .section-rail__cta { margin-left: 0; }
 }
-@media (prefers-reduced-motion: reduce) { :root { scroll-behavior: auto; } *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; } .reveal { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { :root { scroll-behavior: auto; } *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; } .reveal { opacity: 1; transform: none; } .ticker__track { transform: none; } }
