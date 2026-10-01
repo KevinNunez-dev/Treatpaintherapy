@@ -43,6 +43,8 @@ a:focus-visible, button:focus-visible { outline: 2px solid #a8f2d6; outline-offs
 .section-rail a { flex: 0 0 auto; color: rgba(255,255,255,.68); font-size: .72rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; white-space: nowrap; transition: color .2s ease; }
 .section-rail a:hover { color: #a8f2d6; }
 .section-rail__cta { margin-left: auto; background: #a8f2d6; color: #071113 !important; padding: .85rem 1rem; }
+footer > div > div:first-child > a:first-child { font-size: 0; }
+footer > div > div:first-child > a:first-child::after { content: 'PAIN/RELIEF THERAPY'; font-size: 1.125rem; letter-spacing: -.06em; }
 @media (min-width: 1024px) {
   #comparison h2, #conditions h2, #proof h2 { font-size: clamp(3rem, 5.25vw, 6.2rem); }
 }
